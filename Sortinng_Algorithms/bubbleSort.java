@@ -1,5 +1,5 @@
 //Bubble Sort Implementation
-//It is in-place algorithm & it has time complexity of O(n^2) also it is stable algorithm
+//It is an in-place algorithm & it has a time complexity of O(n^2) also it is a stable algorithm
 
 package Sortinng_Algorithms;
 import java.util.*;  //importing java.util pacakage
@@ -20,12 +20,12 @@ public class bubbleSort{
 
     public static void main(String[] args) {
         
-        Scanner sc=new Scanner(System.in);  //Creating instance of Scanner class
+        Scanner sc=new Scanner(System.in);  //Creating instance of a Scanner class
 
         System.out.println("Enter the length of array");
         int n=sc.nextInt();  //getting the size of array as input
 
-        int arr[]=new int[n];  //Declaring array
+        int arr[]=new int[n];  //Declaring an array
 
         System.out.println("Enter the integer values");
         for(int i=0;i<n;i++){
