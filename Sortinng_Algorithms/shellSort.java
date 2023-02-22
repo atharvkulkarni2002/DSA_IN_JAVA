@@ -1,23 +1,23 @@
-//Bubble Sort Implementation
-//It is an in-place algorithm & it has a time complexity of O(n^2) also it is a stable algorithm
+//Shell Sort (variation of bubble sort) Implementation
+//It is an in-place algorithm & it has a worst time complexity of O(n^2) and average,bestcase both has O(nlog(n)) time complexity also it is an unstable algorithm
 
 package Sortinng_Algorithms;
-import java.util.*;  //importing java.util pacakage
+import java.util.*;
 
-public class bubbleSort{
+public class shellSort {
 
-    public static void bubble_sort(int arr[]){   //fuction to sort array
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr.length-i-1; j++) {
-                if(arr[j]>arr[j+1]){   //swapping
-                    int temp=arr[j];
-                    arr[j]=arr[j+1];
-                    arr[j+1]=temp;
+    public static void shell_sort(int arr[]){  //funtion to sort array
+        for(int gap= arr.length/2; gap>0;gap/=2){
+            for (int j = gap; j < arr.length; j++) {
+                int temp=arr[j];
+                int i=0;
+                for (i = j; i>=gap && arr[i-gap] >temp; i-=gap) {
+                    arr[i]=arr[i-gap];
                 }
+                arr[i]=temp;
             }
         }
     }
-
     public static void main(String[] args) {
         
         Scanner sc=new Scanner(System.in);  //Creating instance of a Scanner class
@@ -32,7 +32,7 @@ public class bubbleSort{
             arr[i]=sc.nextInt();  //taking elements of array as input
         }
 
-        bubble_sort(arr);
+        shell_sort(arr);
 
         System.out.println("Sorrted array is :");
         for (int i = 0; i < arr.length; i++) {
@@ -43,5 +43,4 @@ public class bubbleSort{
 
         sc.close();
     }
-
 }
